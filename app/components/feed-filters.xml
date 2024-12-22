@@ -1,0 +1,23 @@
+<StackLayout class="p-2">
+    <GridLayout rows="auto" columns="*, auto" class="mb-2">
+        <TextField col="0" 
+                  hint="Mots-clés (séparés par des virgules)" 
+                  text="{{ keywords }}" 
+                  class="input" />
+        <Button col="1" 
+                text="Filtrer" 
+                tap="{{ applyFilters }}" 
+                class="btn-primary ml-2" />
+    </GridLayout>
+    
+    <GridLayout rows="auto" columns="*, auto" class="mb-2">
+        <Label col="0" 
+               text="Période (jours) : {{ dayFilter }}" 
+               class="text-sm" />
+        <Slider col="1" 
+                minValue="1" 
+                maxValue="30" 
+                value="{{ dayFilter }}" 
+                class="w-32" />
+    </GridLayout>
+</StackLayout>

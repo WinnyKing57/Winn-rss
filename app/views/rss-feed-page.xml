@@ -1,0 +1,52 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      navigatingTo="onNavigatingTo" 
+      class="page theme-light">
+    <ActionBar title="WinRSS" class="action-bar">
+        <ActionItem tap="onSettings" ios.position="right" android.position="actionBar">
+            <Label text="⚙️" class="fas" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto, auto, auto, auto, *" class="p-4">
+        <!-- Sélecteur de thème -->
+        <theme-switcher row="0" class="mb-4" />
+
+        <!-- Filtres -->
+        <feed-filters row="1" class="mb-4" filtersChanged="{{ onFiltersChanged }}" />
+
+        <!-- Barre de recherche -->
+        <GridLayout row="2" columns="*, auto" class="mb-4">
+            <TextField col="0" 
+                      hint="Entrez l'URL du flux RSS" 
+                      text="{{ url }}" 
+                      class="input" />
+            <Button col="1" 
+                    text="Charger" 
+                    tap="{{ loadFeed }}" 
+                    class="btn-primary ml-2" />
+        </GridLayout>
+
+        <!-- Message d'erreur -->
+        <Label row="3" 
+               text="{{ error }}" 
+               class="text-danger mb-2" 
+               visibility="{{ error ? 'visible' : 'collapsed' }}" />
+
+        <!-- Liste des articles -->
+        <ListView row="4" 
+                 items="{{ filteredItems }}" 
+                 class="list-group" 
+                 itemTap="{{ onItemTap }}">
+            <ListView.itemTemplate>
+                <GridLayout>
+                    <feed-item />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- Indicateur de chargement -->
+        <ActivityIndicator rowSpan="5" 
+                          busy="{{ isLoading }}" 
+                          class="activity-indicator" />
+    </GridLayout>
+</Page>

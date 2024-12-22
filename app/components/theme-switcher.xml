@@ -1,0 +1,22 @@
+<GridLayout rows="auto" columns="*,*,*,*" class="p-2">
+    <Button text="Light" 
+            col="0" 
+            tap="{{ switchTheme }}" 
+            data-theme="light" 
+            class="theme-btn" />
+    <Button text="Dark" 
+            col="1" 
+            tap="{{ switchTheme }}" 
+            data-theme="dark" 
+            class="theme-btn" />
+    <Button text="Forest" 
+            col="2" 
+            tap="{{ switchTheme }}" 
+            data-theme="forest" 
+            class="theme-btn" />
+    <Button text="Ocean" 
+            col="3" 
+            tap="{{ switchTheme }}" 
+            data-theme="ocean" 
+            class="theme-btn" />
+</GridLayout>

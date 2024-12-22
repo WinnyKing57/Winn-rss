@@ -1,0 +1,28 @@
+android {
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 33
+    compileSdkVersion 33
+    
+    applicationId "org.nativescript.winrss"
+    versionCode 1
+    versionName "1.0.0"
+  }
+
+  signingConfigs {
+    release {
+      storeFile file("winrss.keystore")
+      storePassword "winrss"
+      keyAlias "winrss"
+      keyPassword "winrss"
+    }
+  }
+
+  buildTypes {
+    release {
+      signingConfig signingConfigs.release
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}

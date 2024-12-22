@@ -1,0 +1,17 @@
+<GridLayout columns="auto, *" class="feed-item p-2" loaded="onLoaded">
+    <Image col="0" src="{{ imageUrl || '~/images/default-image.png' }}" 
+           width="60" height="60" class="rounded-lg" />
+    <StackLayout col="1" class="ml-3">
+        <Label text="{{ title }}" class="title" textWrap="true" />
+        <Label text="{{ formattedDate }}" class="date" />
+        <Label text="{{ description }}" class="description" textWrap="true" 
+               visibility="{{ expanded ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+    <GridLayout.tap>
+        <AnimationDefinition duration="200">
+            <PropertyAnimation target="description" 
+                             property="opacity" 
+                             value="{{ expanded ? 1 : 0 }}" />
+        </AnimationDefinition>
+    </GridLayout.tap>
+</GridLayout>

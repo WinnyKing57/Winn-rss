@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.theme-light {
+  --color-primary: #007AFF;
+  --color-secondary: #5856D6;
+  --color-background: #FFFFFF;
+  --color-text: #000000;
+  --color-accent: #FF2D55;
+}
+
+.theme-dark {
+  --color-primary: #0A84FF;
+  --color-secondary: #5E5CE6;
+  --color-background: #000000;
+  --color-text: #FFFFFF;
+  --color-accent: #FF375F;
+}
+
+.theme-forest {
+  --color-primary: #2D862D;
+  --color-secondary: #1A4D1A;
+  --color-background: #F0F7F0;
+  --color-text: #0A260A;
+  --color-accent: #FF6B6B;
+}
+
+.theme-ocean {
+  --color-primary: #0077B6;
+  --color-secondary: #023E8A;
+  --color-background: #F0F8FF;
+  --color-text: #03045E;
+  --color-accent: #FF9E00;
+}
+
+.page {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.action-bar {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.input {
+  border-color: var(--color-secondary);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.feed-item {
+  background-color: var(--color-background);
+  border-color: var(--color-secondary);
+}
